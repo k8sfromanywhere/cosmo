@@ -41,7 +41,6 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Stack(
         clipBehavior: Clip.none,
         children: [
-          // 1) фон звёзд
           Positioned.fill(
             child: Image.asset(
               'assets/images/stars.jpg',
@@ -50,7 +49,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          // 2) фрагмент Солнца
           Positioned(
             top: -size.width * 0.55,
             left: -size.width * 0.25,
@@ -62,7 +60,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SizedBox(height: 70),
 
-          // 3) карусель планет
           Align(
             alignment: Alignment.bottomCenter,
             child: SizedBox(
@@ -87,7 +84,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          // 4) индикаторы
           Positioned(
             bottom: 50,
             left: 0,
@@ -105,7 +101,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-/// Простая карточка для планеты
 class PlanetCard extends StatelessWidget {
   final dynamic planet;
   final VoidCallback onTap;
@@ -149,7 +144,6 @@ class PlanetCard extends StatelessWidget {
   }
 }
 
-/// Простой индикатор точками
 class DotsIndicator extends StatelessWidget {
   final int count;
   final int currentIndex;

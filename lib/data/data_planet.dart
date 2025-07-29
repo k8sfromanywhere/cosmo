@@ -3,17 +3,7 @@ import 'package:flutter/material.dart';
 
 class PlanetData {
   static List<PlanetModel> getPlanet() {
-    //todo
     return [
-      // PlanetModel(
-      //   name: 'Солнце',
-      //   description:
-      //       'Звезда в центре нашей Солнечной системы, вокруг которой обращаются все планеты, астероиды, кометы и другие космические тела.',
-      //   imageAsset: 'assets/images/sun.png',
-      //   distanceFromSun: 'Расстояние до Солнца: ~58 млн км',
-      //   color1: const Color.fromARGB(255, 231, 118, 13),
-      //   color2: const Color.fromARGB(255, 36, 1, 1),
-      // ),
       PlanetModel(
         id: 'mercury',
         name: 'Меркурий',

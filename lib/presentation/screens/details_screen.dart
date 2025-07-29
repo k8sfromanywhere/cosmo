@@ -19,8 +19,6 @@ class DetailsScreen extends StatefulWidget {
 class _DetailsScreenState extends State<DetailsScreen> {
   bool _isLoading = true;
   String? _error;
-
-  // Анимация печати текста
   String displayedText = '';
   Timer? _timer;
   int _currentIndex = 0;
@@ -41,7 +39,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
   }
 
   void _startTyping() {
-    // Отменяем старый таймер, если есть
     _timer?.cancel();
     _timer = Timer.periodic(const Duration(milliseconds: 50), (timer) {
       if (!mounted) {
@@ -121,7 +118,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
         widget.planet.constellation = constellationName;
         _isLoading = false;
 
-        // после получения данных дополняем текст и перезапускаем печать
         final extra =
             '\n\nРасстояние до Земли: ${widget.planet.distanceFromEarth}\nСозвездие: ${widget.planet.constellation}';
         _fullText += extra;
@@ -136,71 +132,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
     }
   }
 
-  //   @override
-  //   Widget build(BuildContext context) {
-  //     final p = widget.planet;
-
-  //     return Scaffold(
-  //       appBar: AppBar(title: Text(p.name)),
-  //       body: GradientBackground(
-  //         colors1: p.color1,
-  //         colors2: p.color2,
-  //         child: Padding(
-  //           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-  //           child:
-  //               _isLoading && displayedText.isEmpty
-  //                   ? const Center(child: CircularProgressIndicator())
-  //                   : _error != null
-  //                   ? Center(
-  //                     child: Text(
-  //                       'Ошибка загрузки:\n$_error',
-  //                       textAlign: TextAlign.center,
-  //                       style: const TextStyle(color: Colors.white),
-  //                     ),
-  //                   )
-  //                   : SingleChildScrollView(
-  //                     child: Column(
-  //                       crossAxisAlignment: CrossAxisAlignment.start,
-  //                       children: [
-  //                         Center(
-  //                           child: Hero(
-  //                             tag: p.name,
-  //                             child: Image.asset(
-  //                               p.imageAsset,
-  //                               height: 200,
-  //                               width: 200,
-  //                             ),
-  //                           ),
-  //                         ),
-  //                         const SizedBox(height: 20),
-  //                         Text(
-  //                           p.name,
-  //                           style: GoogleFonts.roboto(
-  //                             textStyle: const TextStyle(
-  //                               fontSize: 24,
-  //                               color: Colors.white,
-  //                               fontWeight: FontWeight.bold,
-  //                             ),
-  //                           ),
-  //                         ),
-  //                         const SizedBox(height: 12),
-  //                         Text(
-  //                           displayedText,
-  //                           style: GoogleFonts.roboto(
-  //                             textStyle: const TextStyle(
-  //                               fontSize: 16,
-  //                               color: Colors.white70,
-  //                             ),
-  //                           ),
-  //                         ),
-  //                       ],
-  //                     ),
-  //                   ),
-  //         ),
-  //       ),
-  //     );
-  //   }
-  // }
   @override
   Widget build(BuildContext context) {
     final p = widget.planet;
@@ -222,7 +153,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 1) Всегда показываем Hero-изображение
               Center(
                 child: Hero(
                   tag: p.name,
@@ -230,8 +160,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 ),
               ),
               const SizedBox(height: 20),
-
-              // 3) Блок контента: либо спиннер, либо текст, либо ошибка
               Center(
                 child:
                     _isLoading && displayedText.isEmpty
@@ -245,7 +173,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           child: Align(
                             alignment: Alignment.topLeft,
                             child: Text(
-                              // textAlign: TextAlign.start,
                               displayedText,
                               style: GoogleFonts.roboto(
                                 textStyle: const TextStyle(
