@@ -1,16 +1,25 @@
 # cosmo
 
-A new Flutter project.
+Cosmo
 
-## Getting Started
+RUS
 
-This project is a starting point for a Flutter application.
+Cosmo — это кроссплатформенное Flutter-приложение, визуализирующее планеты Солнечной системы и предоставляющее информацию о положении небесных тел на текущую дату и время.
 
-A few resources to get you started if this is your first Flutter project:
+🚀 Возможности
+	•	🪐 Интерактивная карусель планет
+	•	🎬 Плавная анимация при переходе между экранами с использованием Hero
+	•	⌨️ Типографская анимация описания планет (эффект печати)
+	•	🔭 Получение актуальных данных о расстоянии планет от Земли и созвездии через Astronomy API
+	•	🌈 Кастомный градиентный фон для каждого небесного тела
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+ENG
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Cosmo is a cross-platform Flutter app that visualizes the planets of the Solar System and provides information about the positions of celestial bodies for the current date and time.
+
+🚀 Features
+• 🪐 Interactive planet carousel
+• 🎬 Smooth Hero transition animations between screens
+• ⌨️ Typographic planet description animation (typing effect)
+• 🔭 Fetches up-to-date data on planet distances from Earth and constellations via the Astronomy API
+• 🌈 Custom gradient background for each celestial body
